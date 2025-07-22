@@ -4,6 +4,7 @@ import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import ApplicationComponent from './screens/application.component';
 import HomePage from './screens/homepage.component';
+import Profile from './screens/profile.component';
 import * as AuthService from './data/services/auth.service';
 import { AppConfig } from './common/config/app.config';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
@@ -39,6 +40,7 @@ const RootApp = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<ApplicationComponent onLoginSuccess={() => { setIsLoggedIn(true); }} />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<HomePageWithNav />} />
       </Routes>
     </BrowserRouter>
