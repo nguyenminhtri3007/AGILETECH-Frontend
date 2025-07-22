@@ -1,0 +1,122 @@
+.testimonial-section {
+  background-color: #9C69E2;
+  height: 710px;
+  width: 1110px;
+  text-align: left;
+  border-radius: 50px;
+  margin: 40px auto;
+  position: relative;
+  padding: 1px;
+
+  .testimonial-title {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+
+  .carousel-arrow {
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    &.left-arrow {
+      left: 40px;
+    }
+
+    &.right-arrow {
+      right: 40px;
+    }
+  }
+
+  .testimonial-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+
+    .testimonial-card {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      height: 330px;
+      margin-top: 80px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-left: 100px;
+        margin-top: 60px;
+
+        .testimonial-image {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          margin-right: 20px;
+          object-fit: cover;
+        }
+
+        .testimonial-info {
+          .testimonial-name {
+            font-size: 20px;
+            color: #333;
+            margin: 0;
+          }
+
+          .testimonial-website {
+            font-size: 14px;
+            color: #777;
+            margin: 0;
+          }
+        }
+      }
+
+      .testimonial-text {
+        font-size: 18px;
+        color: #555;
+        line-height: 1.6;
+        margin-left: 200px;
+        margin-right: 130px;
+      }
+    }
+  }
+
+  .carousel-dots {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    .dot {
+      background-color: #ccc;
+      border: none;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin: 0 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &.active {
+        background-color: #EE4281;
+      }
+    }
+  }
+} 
