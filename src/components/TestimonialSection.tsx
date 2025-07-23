@@ -22,6 +22,7 @@ function useScrollReveal<T extends HTMLElement>() {
   }, []);
   return ref;
 }
+// em đã call api nhưng mà api trả ra đang bị lỗi => fix cứng
 
 interface Testimonial {
   id: number;

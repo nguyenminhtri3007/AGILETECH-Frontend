@@ -11,35 +11,37 @@
   flex-direction: column;
   align-items: center;
   .logo {
-  margin-bottom: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  align-items: flex-end; 
-  margin-top: 42px;
-  .dot{
-    &.dot1 {
-          background: #9C40FF;
-          width: 19.88px;
-          height: 19.88px;
-          border-radius: 50%;
-        }
-        
-        &.dot2 {
-          background: #F063B8;
-           width: 19.88px;
-           height: 35px;
-           border-radius: 20px;
-           margin-left: 9px;
-        }
-  }
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 42px;
+    .dot {
+      &.dot1 {
+        background: #9c40ff;
+        width: 19.88px;
+        height: 19.88px;
+        border-radius: 50%;
+      }
+
+      &.dot2 {
+        background: #f063b8;
+        width: 19.88px;
+        height: 35px;
+        border-radius: 20px;
+        margin-left: 9px;
+      }
+    }
   }
   .sidebar-link {
     margin: 16px 0;
     cursor: pointer;
     font-weight: 600;
     color: #444;
-    &.active { color: #9C40FF; }
+    &.active {
+      color: #9c40ff;
+    }
   }
 }
 
@@ -53,7 +55,7 @@
   align-items: center;
   margin-bottom: 24px;
   .add-btn {
-    background: #9C40FF;
+    background: #9c40ff;
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -75,7 +77,8 @@
   width: 100%;
   border-collapse: collapse;
   background: #fff;
-  th, td {
+  th,
+  td {
     border: 1px solid #bbb;
     padding: 8px 12px;
     text-align: left;
@@ -87,12 +90,27 @@
   td {
     font-size: 15px;
   }
+  .action-buttons {
+    display: flex;
+    gap: 8px; // khoảng cách giữa các nút
+    align-items: center;
+    justify-content: center; // nếu muốn căn giữa trong ô/table cell
+  }
+
   .action-btn {
     background: none;
     border: none;
+    padding: 4px;
     cursor: pointer;
-    font-size: 18px;
-    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .action-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
   }
 }
 
@@ -112,12 +130,15 @@
       cursor: not-allowed;
     }
   }
-} 
+}
 
 .modal-backdrop {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.25);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -126,7 +147,7 @@
 .modal-form {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   padding: 32px 28px 24px 28px;
   min-width: 340px;
   max-width: 95vw;
@@ -137,7 +158,8 @@
       display: block;
       margin-bottom: 6px;
     }
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       padding: 8px 12px;
       border-radius: 8px;
@@ -145,7 +167,9 @@
       font-size: 15px;
       resize: none;
     }
-    textarea { min-height: 60px; }
+    textarea {
+      min-height: 60px;
+    }
   }
   .form-error {
     color: #d32f2f;
@@ -162,4 +186,4 @@
       padding: 10px 0;
     }
   }
-} 
+}
