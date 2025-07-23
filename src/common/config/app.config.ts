@@ -2,6 +2,7 @@
 export class AppConfig {
     private domain = "https://nestjs-vercel-197.vercel.app";
 
+
     getDomain() {
         return this.domain;
     }
@@ -65,7 +66,41 @@ export class AppConfig {
      setRefreshToken(token: string) {
       localStorage.setItem('refreshToken', token);
     }
-    
+
+    setTimeExpires() {
+      let endTime = Date.now() + 2 * 60 * 1000;
+      localStorage.setItem('expireTime', endTime.toString());
+    }
+
+    isExpired() {
+      const endTimeStr = localStorage.getItem('expireTime');
+
+      if (endTimeStr !== null) {
+        const endTime = parseInt(endTimeStr, 10);
+        const now = Date.now();
+        return now >= endTime;
+      }
+
+      return true;
+    }
+
+    setRefreshTimeExpires(){
+      let endTime = Date.now() + 24 * 60 * 60 * 1000;
+      localStorage.setItem('refreshExpireTime', endTime.toString());
+    }
+
+    isRefreshExpires(){
+      const endTimeStr = localStorage.getItem('refreshExpireTime');
+
+      if (endTimeStr !== null) {
+        const endTime = parseInt(endTimeStr, 10);
+        const now = Date.now();
+        return now >= endTime;
+      }
+
+      return true;
+    }
+
     async clear() {
       localStorage.clear();
     }

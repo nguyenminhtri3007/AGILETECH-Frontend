@@ -23,6 +23,8 @@ export const signIn = async (data: AuthModel) => {
     );
     appConfig.setAccessToken(resp.data?.accessToken);
     appConfig.setRefreshToken(resp.data?.refreshToken);
+    appConfig.setTimeExpires();
+    appConfig.setRefreshTimeExpires();
     return true;
   } catch (error) {
     throw HandleHttp.exception(error);
@@ -32,6 +34,13 @@ export const signIn = async (data: AuthModel) => {
 export const refreshToken = async () => {
   try {
     const domain = appConfig.getDomain();
+
+    if (appConfig.isRefreshExpires()) {
+      await logout();
+      window.location.href = "/login"; 
+      return null;
+    }
+  
     const refreshToken = appConfig.getRefreshToken();
     if (!refreshToken) {
       throw new Error("Không tìm thấy refresh token.");
@@ -41,7 +50,12 @@ export const refreshToken = async () => {
       { refreshToken }
     );
    
-    return resp.data?.accessToken;
+    const newAccessToken = resp.data?.accessToken;
+
+    appConfig.setAccessToken(newAccessToken);  
+    appConfig.setTimeExpires();                
+
+    return newAccessToken;
   } catch (error) {
     throw HandleHttp.exception(error);
   }
